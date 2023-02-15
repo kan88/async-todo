@@ -1,0 +1,38 @@
+.todo__item {
+    border: 1px solid grey;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.todo__title {
+    margin: 0;
+    font-size: 22px;
+}
+
+.todo__titleDone {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.todo__wrapper {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo__checkbox {
+    cursor: pointer;
+}
+
+.todo__remove {
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+.todo__remove:hover {
+    cursor: pointer;
+    color: red;
+}
