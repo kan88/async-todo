@@ -1,8 +1,8 @@
 import styles from './Item.module.css'
 import { useState } from 'react'
-import { Todo } from './todoSlice'
-import { deleteTodo } from './todoSlice'
-import { useAppDispatch } from '../../app/hooks'
+import { Todo } from '../todoSlice'
+import { deleteTodo } from '../todoSlice'
+import { useAppDispatch } from '../../../app/hooks'
 
 export default function Item(prop: Todo) {
     const dispatch = useAppDispatch();
@@ -16,7 +16,6 @@ export default function Item(prop: Todo) {
     }
 
     const handleRemove = (id: number) => {
-        console.log(id)
         dispatch(deleteTodo(id))
     }
     return (

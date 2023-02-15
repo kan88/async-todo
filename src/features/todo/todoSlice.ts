@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction, current } from '@reduxjs/toolkit';
 import { RootState, AppThunk } from '../../app/store';
-import { fetchCount } from './counterAPI';
 
 export interface Todo {
   userId: number,
@@ -30,6 +29,25 @@ export const getTodos = createAsyncThunk(
   }
 );
 
+export const addTodos = createAsyncThunk(
+  'todo/addTodos',
+  async (title: string) => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      body: JSON.stringify({
+        title: title,
+        body: 'bar',
+        userId: 1,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+    const data = await response.json();
+    return data;
+  }
+);
+
 export const todoSlice = createSlice({
   name: 'todo',
   initialState,
@@ -47,6 +65,9 @@ export const todoSlice = createSlice({
       })
       .addCase(getTodos.fulfilled, (state, action) => {
         state.list = [...action.payload]
+      })
+      .addCase(addTodos.fulfilled, (state, action) => {
+        state.list = [...state.list, action.payload]
       })
       .addCase(getTodos.rejected, (state) => {
       });

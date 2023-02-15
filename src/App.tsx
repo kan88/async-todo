@@ -1,10 +1,13 @@
-import { Todo } from './features/todo/Todo';
+import Form from './features/todo/Form/Form';
+import { Todo } from './features/todo/List/List';
 
 function App() {
   return (
-    <div className="App">
+    <main className="App">
+      <h1>My todo app</h1>
+      <Form />
       <Todo />
-    </div>
+    </main>
   );
 }
 

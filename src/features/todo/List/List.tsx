@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import Item from './Item';
+import React, { useEffect } from 'react';
+import Item from '../Item/Item';
 
-import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import {
-  getTodos, selectTodo,
-} from './todoSlice';
+import { useAppSelector, useAppDispatch } from '../../../app/hooks';
+import { getTodos } from '../todoSlice';
 
 
 export function Todo() {
-  // const list = useAppSelector(selectTodo);
   const list = useAppSelector(state => state.todo.list)
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(getTodos())
-  }, [])
+  }, [dispatch])
   return (
-    <ul>
+    <ul className='todo__list'>
       {list.map((item) => <Item key={item.id} {...item}></Item>)}
       <button onClick={() => console.log(list)}>basic  </button>
 
