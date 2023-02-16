@@ -17,7 +17,7 @@ export default function Form() {
 
     return (
         <form onSubmit={handleSubmit} className={styles.form}>
-            <input className={styles.form__input} onInput={handleInput} type="text" name="title" placeholder='add new task' value={value} />
+            <input required className={styles.form__input} onInput={handleInput} type="text" name="title" placeholder='add new task' value={value} />
             <button className={styles.form__submit} type="submit">SEND</button>
         </form>
     )

@@ -8,7 +8,7 @@
 
 .todo__item:hover {
     color: white;
-    background-color: green;
+    background-color: teal;
 }
 
 .todo__title {

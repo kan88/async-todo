@@ -1,0 +1,14 @@
+.state {
+    font-size: 18px;
+    padding: 15px 10px;
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.state:hover {
+    background-color: blueviolet;
+    color: whitesmoke;
+}
